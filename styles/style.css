@@ -15,6 +15,422 @@
 */
 
 .page {
+  max-inline-size: 1440px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-block-start: 102px;
+
+  font-family: var(--main-font-family), Arial, Helvetica, sans-serif;
+  font-variation-settings: 'wdth' var(--text-weight);
+
+  background-image: var(--bg-gradient-image);
+  background-attachment: fixed;
+  background-color: var(--theme-background-color);
+  color: var(--theme-accent-color);
+  
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  inline-size: min(100%, 696px);
+  block-size: 364px;
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px;
+  margin-block-end: 104px;
+  border: 2px solid var(--theme-accent-color);
+  background-color: var(--theme-background-color);
+}
+
+.header__logo {
+  font-family: var(--accent-font-family);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-style: normal;
+  font-weight: var(--text-weight);
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-style: normal;
+  font-weight: var(--text-weight);
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.header__svg {
+  fill: var(--theme-accent-color);
+}
+
+.theme-menu__list {
+  padding-inline-start: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.theme-menu__button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-weight: var(--title-weight);
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  border: none;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  background-color: var(--theme-accent-color);
+  transition: width 0.5s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -15px;
+  animation: 0.5s ease-in-out 0s infinite alternate check;
+  pointer-events: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  inline-size: min(100%, 696px);
+  margin: 0 auto;
+  background-color: var(--theme-background-color);
+  border: 2px solid var(--theme-accent-color);
+}
+
+.card__title {
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: var(--title-weight);
+  line-height: normal;
+  padding: 5px 10px;
+}
+
+.card__picture-container {
+  position: relative;
+  inline-size: min(100%, 696px);
+  block-size: max(696px, 371px); /* обрати внимание! */
+  object-fit: cover;
+  object-position: center;
+  border-top: 2px solid var(--theme-accent-color);
+  border-bottom: 2px solid var(--theme-accent-color);
+}
+
+.card__picture-logo {
+  position: absolute;
+  top: 26px;
+  right: 23px;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+   1px 1px 0 var(--theme-background-color),
+   1px -1px 0 var(--theme-background-color),
+  -1px 1px 0 var(--theme-background-color),
+  -1px -1px 0 var(--theme-background-color);
+  mix-blend-mode: hard-light;
+  color: var(--theme-accent-color);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--text-weight);
+  line-height: normal;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+@supports((text-stroke: 1px var(--theme-background-color)) or (-webkit-text-stroke: 1px var(--theme-background-color))) {
+  .card__picture-logo {
+      -webkit-text-stroke: 1px var(--theme-background-color);
+      text-stroke: 1px var(--theme-background-color);
+      text-shadow: none;
+  }
+} 
+
+.card__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+
+.card__picture-roadsign {
+  filter: grayscale(0.8);
+}
+
+.card__picture-whitepaper {
+  filter: grayscale(30%);
+}
+
+.card__picture-oldhous {
+  filter: saturate(200%) grayscale(0.8);
+}
+
+.card__picture-shoes {
+  filter: contrast(150%) blur(3px) grayscale(0.8);
+  
+}
+
+.card__picture-friends {
+  filter: sepia(1) contrast(50%) saturate(60%);
+}
+
+.card__picture-map {
+  filter: contrast(1.3) grayscale(0.8);
+}
+
+.card__picture-gym {
+  filter: grayscale(0.8);
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: var(--text-weight);
+  line-height: 21px; /* 116.667% */
+  padding: 25px;
+}
+
+.card__button-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.button {
+  background-color: var(--theme-background-color);
+  border: 2px solid var(--theme-accent-color);
+  font-family: var(--accent-font-family);
+  position: relative;
+  z-index: 1;
+}
+
+.button:focus {
+  outline: none;
+  border: 2px solid var(--theme-accent-color)
+}
+
+.button:focus-visible {
+  outline: none;
+  border: 2px solid var(--theme-accent-color);
+  box-shadow: 2px 2px var(--theme-accent-color);
+  transition: 0.3s ease;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--theme-accent-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  width: 100%;
+}
+
+.button__text {
+  color: var(--theme-accent-color);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;  
+}
+
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  width: 38px; 
+  height: 38px;
+}
+
+.card__icon-button:focus {
+  border: none;
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid var(--theme-accent-color);
+  transition: 0.3s ease;
+}
+
+/* Исходное */
+
+.like-icon .core {
+  fill: var(--theme-background-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon .main-body {
+  fill: var(--theme-background-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+/* Ховернули */
+
+.like-icon:hover .core {
+  fill: var(--theme-accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--theme-accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+/* Нажали и держим */
+
+.like-icon:active .core {
+  fill: var(--heart-accent-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+/* Кликнуто */
+
+.like-icon.is-liked .core {
+  fill: var(--heart-accent-color);
+  transition: fill 0.3s linear;
+
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-accent-color);
+  transition: fill 0.3s 0.05s linear;  
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-accent-color);
+  transition: fill 0.3s 0.06s linear;  
+}
+
+/* Анимашеньки */
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s alternate ease-in 0.1s;
+
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s alternate ease-in 0.3s;    
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+}
+
+/* Footer */
+
+.footer {
+  padding: 54px 0 103px;
+}
+
+.footer__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  justify-content: space-evenly;
+  width: 335px;
+  height: 51px;
+  background-color: var(--theme-background-color);
+  border: 2px solid var(--theme-accent-color);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__button-picture {
+  width: 21px;
+  height: 21px;
+  fill: var(--theme-accent-color);
+}
+
+.footer__popup {
+  border: 2px solid var(--theme-accent-color);
+  background-color: var(--theme-background-color);
+  font-family: var(--accent-font-family);
+  font-size: var(--title-weight);
+  color: var(--theme-accent-color);
+
+}
+
+.footer__popup[open]{
+  display: grid;
+  width: 300px;
+}
+
+@media (width <= 375px) {
+  .footer__button {
+    flex-direction: column;
+    width: 306px;
+    height: 80px;
+  }
 }

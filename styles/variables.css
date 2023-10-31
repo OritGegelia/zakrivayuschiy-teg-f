@@ -1,1 +1,16 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --theme-background-color: #fff;
+    --theme-accent-color: #000;
+    --heart-accent-color: #f00;
+    --accent-font-family: 'PressStartP2';
+    --main-font-family: 'Inter-variable';
+    --title-weight: 700;
+    --text-weight: 400;
+    --bg-gradient-image:
+      repeating-linear-gradient(#d3d3d3, transparent 2px),
+      repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
+      linear-gradient(#e7e7e7, #1a1a1a); 
+}
+ 
