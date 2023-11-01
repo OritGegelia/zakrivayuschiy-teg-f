@@ -8,6 +8,7 @@
 :root.theme-light {
     --theme-background-color: #fff;
     --theme-accent-color: #000;
+    --button-accent-color: #fff;
     --title-weight: 700;
     --text-weight: 400;
     --bg-gradient-image: 
@@ -19,6 +20,7 @@
 :root.theme-dark {
     --theme-background-color: #000;
     --theme-accent-color: #00cc14;
+    --button-accent-color: #00cc14;
     --title-weight: 785;
     --text-weight: 465;
     --bg-gradient-image: 
@@ -31,6 +33,7 @@
     :root.theme-auto {
         --theme-background-color: #000;
         --theme-accent-color: #00cc14;
+        --button-accent-color: #00cc14;
         --title-weight: 785;
         --text-weight: 465;
         --bg-gradient-image: 
