@@ -400,7 +400,7 @@
   mix-blend-mode: difference;
 }
 
-/* Dialog */
+/* <dialog> */
 
 .footer__popup {
   display: block;
