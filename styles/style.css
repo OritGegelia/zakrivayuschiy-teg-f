@@ -401,25 +401,6 @@
 
 /* <dialog> */
 
-/* .footer__popup {
-  display: grid;
-  gap: 30px;
-  padding: 31.5px;
-  width: 357px;
-  opacity: 1;
-  transition: opacity 0.8s ease;
-  border: 2px solid var(--theme-accent-color);
-  background-color: var(--theme-background-color);
-  font-family: var(--accent-font-family);
-  font-size: var(--title-weight);
-  color: var(--theme-accent-color);
-}
-
-.footer__popup:not([open]) {
-  opacity: 0;
-  transition: opacity 0.8s ease;
-} */
-
 .footer__popup {
   opacity: 0;
   transition: opacity 0.8s ease;
