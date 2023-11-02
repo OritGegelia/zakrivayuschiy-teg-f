@@ -573,13 +573,14 @@
           </svg>
           <h4>Вставьте дискету, чтобы продолжить</h4>
         </div>
-        <button
-          class="button popup__button"
-          type="button"
-          onclick="window['footer__popup'].close()"
+        <form method="dialog">
+          <button
+          class="button footer__popup-button"
+          type="submit"
         >
           <span class="button__text footer__button-text">ok</span>
         </button>
+        </form>
       </dialog>
     </footer>
     <script src="./scripts/like.js"></script>

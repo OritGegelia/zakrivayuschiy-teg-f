@@ -432,7 +432,8 @@
   align-items: center;
 }
 
-.popup__button {
+.footer__popup-button {
+  width: 100%;
   min-height: 38px;
   padding: 9px 17px;
 }
