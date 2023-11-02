@@ -402,27 +402,27 @@
 /* <dialog> */
 
 .footer__popup {
-  display: block;
-  border: 2px solid var(--theme-accent-color);
-  background-color: var(--theme-background-color);
-  font-family: var(--accent-font-family);
-  font-size: var(--title-weight);
-  color: var(--theme-accent-color);
-  opacity: 0;
-}
-
-.footer__popup::backdrop {
-  background-color: var(--theme-background-color);
-  backdrop-filter: blur(7px);
-}
-
-.footer__popup[open] {
   display: grid;
   gap: 30px;
   padding: 31.5px;
   width: 357px;
   opacity: 1;
   transition: opacity 0.8s ease;
+  border: 2px solid var(--theme-accent-color);
+  background-color: var(--theme-background-color);
+  font-family: var(--accent-font-family);
+  font-size: var(--title-weight);
+  color: var(--theme-accent-color);
+}
+
+.footer__popup:not([open]) {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.footer__popup::backdrop {
+  background-color: var(--theme-background-color);
+  backdrop-filter: blur(7px);
 }
 
 .footer__popup-container {
