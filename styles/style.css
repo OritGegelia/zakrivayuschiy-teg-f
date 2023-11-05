@@ -9,7 +9,7 @@
   padding-block-start: 102px;
 
   font-family: var(--main-font-family), Arial, Helvetica, sans-serif;
-  font-variation-settings: 'wght' var(--text-weight);
+  font-variation-settings: "wght" var(--text-weight);
 
   background-image: var(--bg-gradient-image);
   background-attachment: fixed;
@@ -134,7 +134,7 @@
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--title-weight);
+  font-variation-settings: "wght" var(--title-weight);
   font-family: var(--main-font-family);
   font-size: 18px;
   padding: 5px 10px;
@@ -170,10 +170,9 @@
   z-index: 1;
 }
 
-@supports (
-  (text-stroke: 1px var(--theme-background-color)) or
-    (-webkit-text-stroke: 1px var(--theme-background-color))
-) {
+@supports (text-stroke: 1px var(--theme-background-color)) or
+  (-webkit-text-stroke: 1px var(--theme-background-color)) {
+    
   .card__picture-logo {
     -webkit-text-stroke: 1px var(--theme-background-color);
     text-stroke: 1px var(--theme-background-color);
@@ -470,7 +469,7 @@
 
 @media (width <= 701px) {
   .main {
-    gap: 50px
+    gap: 50px;
   }
 
   .header {
@@ -527,5 +526,4 @@
     padding: 9px 17px;
     justify-content: center;
   }
-
 }
