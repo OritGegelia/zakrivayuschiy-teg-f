@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 21 21"  
-  fill="green">
+<svg xmlns="http://www.w3.org/2000/svg"  
+  viewBox='0 0 21 12'
+  fill="none">
 
   <symbol id='floppy'>
 
@@ -11,3 +11,4 @@
   
   </symbol>
 </svg>
+
