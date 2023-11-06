@@ -20,20 +20,20 @@
 /* Header */
 
 .header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  justify-items: center;
   align-items: center;
   gap: 20px;
   inline-size: min(100%, 696px);
-  block-size: 364px;
-  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px;
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 21px;
   margin-block-end: 104px;
   outline: 2px solid var(--theme-accent-color);
   background-color: var(--theme-background-color);
 }
 
 .header__logo {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
   font-size: clamp(3rem, 2.4222rem + 2.4653vw, 4rem);
   font-style: normal;
   font-weight: var(--text-weight);
@@ -55,17 +55,18 @@
 
 .theme-menu__list {
   padding-inline-start: 17px;
-  padding-block-start: 3px;
+  padding-block-start: 5px;
   display: flex;
   flex-direction: column;
   gap: 9px;
+  line-height: 14px;
 }
 
 .theme-menu__button {
   position: relative;
   background-color: transparent;
   border: none;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: var(--title-weight);
   line-height: normal;
@@ -135,7 +136,7 @@
 
 .card__title {
   font-variation-settings: "wght" var(--title-weight);
-  font-family: var(--main-font-family);
+  font-family: var(--main-font-family), Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 5px 10px;
   border-bottom: 2px solid var(--theme-accent-color);
@@ -161,7 +162,7 @@
     -1px 1px 0 var(--theme-background-color),
     -1px -1px 0 var(--theme-background-color);
   color: var(--theme-accent-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: var(--text-weight);
@@ -172,7 +173,6 @@
 
 @supports (text-stroke: 1px var(--theme-background-color)) or
   (-webkit-text-stroke: 1px var(--theme-background-color)) {
-    
   .card__picture-logo {
     -webkit-text-stroke: 1px var(--theme-background-color);
     text-stroke: 1px var(--theme-background-color);
@@ -220,8 +220,9 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
-  font-family: var(--main-font-family);
+  font-family: var(--main-font-family), Arial, Helvetica, sans-serif;
   font-size: 18px;
+  line-height: 21px;
   font-style: normal;
   font-weight: var(--text-weight);
   padding: 25px;
@@ -234,16 +235,16 @@
   align-items: center;
   justify-content: end;
   gap: 7px;
-  padding-right: 25px;
-  padding-bottom: 25px;
+  padding-inline-end: 25px;
+  padding-block-end: 25px;
 }
 
-/* Button - common styles */
+/* Buttons - common styles */
 
 .button {
   background-color: var(--theme-background-color);
   border: 2px solid var(--theme-accent-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -289,26 +290,27 @@
 
 .card__icon-button {
   border: 2px solid transparent;
-  background-color: transparent;
-  width: 38px;
   height: 38px;
+  width: 39px;
   padding: 0;
+  background-color: transparent;
   cursor: pointer;
 }
 
 .card__icon-button:focus {
-  border: none;
   outline: none;
 }
 
 .card__icon-button:focus-visible {
+  outline: none;
   border: 2px solid var(--theme-accent-color);
   transition: border 0.3s ease;
 }
 
 .like-icon {
-  width: inherit;
-  height: inherit;
+  width: 38px;
+  height: 38px;
+  padding: 0;
 }
 
 .like-icon .core {
@@ -406,6 +408,7 @@
 .footer__button-text {
   text-transform: uppercase;
 }
+
 /* <dialog> */
 
 .footer__popup {
@@ -415,7 +418,7 @@
   transition: opacity 0.8s ease;
   border: 2px solid var(--theme-accent-color);
   background-color: var(--theme-background-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), Arial, Helvetica, sans-serif;
   font-size: var(--title-weight);
   color: var(--theme-accent-color);
 }
@@ -439,12 +442,12 @@
 .footer__popup-container {
   display: flex;
   flex-direction: row;
-  gap: 26px;
+  gap: 24px;
   align-items: center;
 }
 
 .footer__popup-text {
-  color: var(--themes-accent-color, #000);
+  color: var(--themes-accent-color);
   font-family: var(--accent-font-family);
   font-size: 14px;
   font-style: normal;
@@ -517,6 +520,10 @@
     width: 341px;
     height: 195px;
     padding: 32px 42px;
+  }
+
+  .footer__popup-container {
+    gap: 26px;
   }
 
   .footer__popup-button {

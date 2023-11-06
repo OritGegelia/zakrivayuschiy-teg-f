@@ -1,16 +1,29 @@
 :root.theme-light {
-    --theme-background-color: #fff;
-    --theme-accent-color: #000;
-    --button-accent-color: #fff;
-    --title-weight: 700;
-    --text-weight: 400;
-    --bg-gradient-image: 
-      repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
-      repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
-      linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --theme-background-color: #fff;
+  --theme-accent-color: #000;
+  --button-accent-color: #fff;
+  --title-weight: 700;
+  --text-weight: 400;
+  --bg-gradient-image: 
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 }
 
 :root.theme-dark {
+  --theme-background-color: #000;
+  --theme-accent-color: #00cc14;
+  --button-accent-color: #00cc14;
+  --title-weight: 785;
+  --text-weight: 465;
+  --bg-gradient-image: 
+    repeating-linear-gradient(90deg, #000 0 2px,rgb(0 0 0 / 0) 2px 4px),
+    repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #007f0c 0%, #004306 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
     --theme-background-color: #000;
     --theme-accent-color: #00cc14;
     --button-accent-color: #00cc14;
@@ -20,18 +33,5 @@
       repeating-linear-gradient(90deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
       repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
       linear-gradient(180deg, #007f0c 0%, #004306 100%);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root.theme-auto {
-        --theme-background-color: #000;
-        --theme-accent-color: #00cc14;
-        --button-accent-color: #00cc14;
-        --title-weight: 785;
-        --text-weight: 465;
-        --bg-gradient-image: 
-          repeating-linear-gradient(90deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
-          repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
-          linear-gradient(180deg, #007f0c 0%, #004306 100%);
-    }
+  }
 }
